@@ -3,6 +3,12 @@ package com.mjc.stage2;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee.EmployeeBuilder().setName("Name").setLastName("LastName").build();
+    }
+}
+
 @EqualsAndHashCode
 @ToString
 public class Employee {
@@ -69,45 +75,44 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-
-        private final Employee employee;
+        private Employee employee;
 
         public EmployeeBuilder() {
-            this.employee = new Employee();
+            employee = new Employee();
         }
 
-        public Employee setName(String name) {
-            this.employee.setName(name);
-            return this.employee;
+        public EmployeeBuilder setName(String name) {
+            employee.name = name;
+            return this;
         }
 
-        public Employee setLastName(String lastName) {
-            this.employee.setLastName(lastName);
-            return this.employee;
+        public EmployeeBuilder setLastName(String lastName) {
+            employee.lastName = lastName;
+            return this;
         }
 
-        public Employee setPosition(String position) {
-            this.employee.setPosition(position);
-            return this.employee;
+        public EmployeeBuilder setPosition(String position) {
+            employee.position = position;
+            return this;
         }
 
-        public Employee setPhone(String phone) {
-            this.employee.setPhone(phone);
-            return this.employee;
+        public EmployeeBuilder setPhone(String phone) {
+            employee.phone = phone;
+            return this;
         }
 
-        public Employee setEmail(String email) {
-            this.employee.setEmail(email);
-            return this.employee;
+        public EmployeeBuilder setEmail(String email) {
+            employee.email = email;
+            return this;
         }
 
-        public Employee setCarNumber(String carNumber) {
-            this.employee.setCarNumber(carNumber);
-            return this.employee;
+        public EmployeeBuilder setCarNumber(String carNumber) {
+            employee.carNumber = carNumber;
+            return this;
         }
 
         public Employee build() {
-            return this.employee;
+            return employee;
         }
     }
 }
