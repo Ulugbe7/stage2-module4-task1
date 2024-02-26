@@ -1,5 +1,9 @@
 package com.mjc.stage2;
 
 public class ThreadSafeSingleton {
-    // Write your code here!
+    private static ThreadSafeSingleton instance = new ThreadSafeSingleton();
+
+    public static ThreadSafeSingleton getInstance() {
+        return instance;
+    }
 }
